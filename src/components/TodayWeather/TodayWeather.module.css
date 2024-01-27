@@ -1,0 +1,22 @@
+.div-flex
+{
+  flex: 70%;
+}
+
+.d-flex-cloud
+{
+  flex: 30%;
+  border-right: .15rem solid darkblue;
+}
+
+.temp-value-p
+{
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.grid-property-value-p
+{
+  font-size: 1.25rem;
+  font-weight: 500;
+}

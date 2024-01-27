@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from './Today.module.css';
+import styles from './TodayWeather.module.css';
 
 interface Props
 {
@@ -13,7 +13,7 @@ interface Props
   tempValue: number;
 }
 
-export default function Today({
+export default function TodayWeather({
   gridArray,
   tempImg,
   tempValue,
@@ -24,41 +24,45 @@ export default function Today({
       className="container-fluid"
     >
       <div
-        className="container d-flex justify-content-between align-items-start"
+        className={ `container d-flex justify-content-between align-items-start` }
       >
         <div
-          className="container"
+          className={ `container ${styles["d-flex-cloud"]}` }
         >
           <div
-            className="d-flex"
+            className={ `d-flex` }
           >
             <img
               src={ tempImg }
               alt="Cloud"
             />
-            <p>
+            <p
+              className={ `${styles["temp-value-p"]}` }
+            >
               { tempValue }&deg;
             </p>
           </div>
         </div>
 
         <div
-          className={ `container ${styles["div-flex"]}` }
+          className={ `container mx-5 ${styles["div-flex"]}` }
         >
           <div
-            className="row justify-content-between"
+            className="d-flex justify-content-around"
           >
             { gridArray.map((grid, index) =>
             {
               return (
                 <div
                   key={ index }
-                  className={ `col-2 grid-${index} ${grid.className}` }
+                  className={ `col-2 text-center grid-${index} ${grid.className}` }
                 >
                   <p>
                     { grid.propertyName }
                   </p>
-                  <p>
+                  <p
+                    className={ `${styles["grid-property-value-p"]}` }
+                  >
                     { grid.propertyValue }{ grid.propertyUnit }
                   </p>
                 </div>

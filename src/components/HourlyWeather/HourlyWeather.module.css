@@ -1,0 +1,16 @@
+.hourly
+{
+  border: .1rem solid darkblue;
+  border-radius: .3rem;
+}
+
+.hourly-container
+{
+  gap: 1rem;
+}
+
+.hourly-value-p
+{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
