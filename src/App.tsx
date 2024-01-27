@@ -2,7 +2,7 @@ import './App.css';
 import TodayWeather from './components/TodayWeather/TodayWeather';
 import DailyWeather from './components/DailyWeather/DailyWeather';
 import HourlyWeather from './components/HourlyWeather/HourlyWeather';
-import axios from 'axios';
+// import axios from 'axios';
 
 function App() {
   const gridArray = [
