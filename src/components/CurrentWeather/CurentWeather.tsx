@@ -1,5 +1,10 @@
 import { ReactNode } from "react";
-import styles from './TodayWeather.module.css';
+import styles from './CurrentWeather.module.css';
+
+interface CurrentWeather
+{
+  [key: string]: any;
+}
 
 interface Props
 {
@@ -9,12 +14,14 @@ interface Props
     propertyValue: number,
     propertyUnit: string,
   }[];
+  currentWeather: CurrentWeather;
   tempImg: string;
   tempValue: number;
 }
 
 export default function TodayWeather({
   gridArray,
+  // currentWeather,
   tempImg,
   tempValue,
 }: Props): ReactNode
