@@ -3,19 +3,19 @@ import styles from './HourlyWeather.module.css';
 
 interface Props
 {
+  day: string;
   hourlyWeatherArray: {
-    day: string;
     time: string;
     imgSrc: string;
-    tempUnit: string;
-    tempValue: number;
-    flTempValue: number;
-    windValue: number;
-    precipValue: number;
+    tempValue: string;
+    flTempValue: string;
+    windValue: string;
+    precipValue: string;
   }[];
 }
 
 export default function HourlyWeather({
+  day,
   hourlyWeatherArray,
 }: Props): ReactNode
 {
@@ -39,7 +39,7 @@ export default function HourlyWeather({
                 <div>
                   <p
                   >
-                    { hourly.day }
+                    { day }
                   </p>
                   <p
                     className={ `${styles["hourly-value-p"]}` }
@@ -49,7 +49,7 @@ export default function HourlyWeather({
                 </div>
                 <img
                   src={ hourly.imgSrc }
-                  alt={ `${hourly.day}, ${hourly.time} weather` }
+                  alt={ `${day}, ${hourly.time} weather` }
                 />
                 <div>
                   <p
@@ -59,7 +59,7 @@ export default function HourlyWeather({
                   <p
                     className={ `${styles["hourly-value-p"]}` }
                   >
-                    { hourly.tempValue }{ hourly.tempUnit }
+                    { hourly.tempValue }
                   </p>
                 </div>
                 <div>
@@ -70,7 +70,7 @@ export default function HourlyWeather({
                   <p
                     className={ `${styles["hourly-value-p"]}` }
                   >
-                    { hourly.flTempValue }{ hourly.tempUnit }
+                    { hourly.flTempValue }
                   </p>
                 </div>
                 <div>
@@ -81,7 +81,7 @@ export default function HourlyWeather({
                   <p
                     className={ `${styles["hourly-value-p"]}` }
                   >
-                    { hourly.windValue }mph
+                    { hourly.windValue }
                   </p>
                 </div>
                 <div>
@@ -92,7 +92,7 @@ export default function HourlyWeather({
                   <p
                     className={ `${styles["hourly-value-p"]}` }
                   >
-                    { hourly.precipValue }in
+                    { hourly.precipValue }
                   </p>
                 </div>
               </div>

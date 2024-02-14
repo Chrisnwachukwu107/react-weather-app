@@ -1,31 +1,61 @@
 import { ReactNode } from "react";
 import styles from './CurrentWeather.module.css';
 
-interface CurrentWeather
-{
-  [key: string]: any;
-}
-
 interface Props
 {
   gridArray: {
-    className: string,
     propertyName: string,
-    propertyValue: number,
-    propertyUnit: string,
+    propertyValue: string,
   }[];
-  currentWeather: CurrentWeather;
+  currentWeather: {
+    current: {
+      apparent_temperature: number,
+      interval: number,
+      precipitation: number,
+      temperature_2m: number,
+      time: number,
+      weather_code: number,
+      wind_speed_10m: number,
+    },
+    current_units: {
+      apparent_temperature: string,
+      interval: string,
+      precipitation: string,
+      temperature_2m: string,
+      time: string,
+      weather_code: string,
+      wind_speed_10m: string,
+    },
+    daily: {
+      apparent_temperature_max: number[],
+      apparent_temperature_min: number[],
+      precipitation_hours: number[],
+      precipitation_sum: number[],
+      temperature_2m_max: number[],
+      temperature_2m_min: number[],
+      time: number[],
+      weather_code: number[],
+    },
+    daily_units: {
+      apparent_temperature_max: string,
+      apparent_temperature_min: string,
+      precipitation_hours: string,
+      precipitation_sum: string,
+      temperature_2m_max: string,
+      temperature_2m_min: string,
+      time: string,
+      weather_code: string,
+    }
+  };
   tempImg: string;
-  tempValue: number;
 }
 
 export default function TodayWeather({
   gridArray,
-  // currentWeather,
+  currentWeather,
   tempImg,
-  tempValue,
 }: Props): ReactNode
-{
+{ 
   return (
     <div
       className="container-fluid"
@@ -46,7 +76,7 @@ export default function TodayWeather({
             <p
               className={ `${styles["temp-value-p"]}` }
             >
-              { tempValue }&deg;
+              { currentWeather.current.temperature_2m }{ currentWeather.current_units.temperature_2m }
             </p>
           </div>
         </div>
@@ -62,7 +92,7 @@ export default function TodayWeather({
               return (
                 <div
                   key={ index }
-                  className={ `col-2 text-center grid-${index} ${grid.className}` }
+                  className={ `col-2 text-center grid-${index}` }
                 >
                   <p>
                     { grid.propertyName }
@@ -70,7 +100,7 @@ export default function TodayWeather({
                   <p
                     className={ `${styles["grid-property-value-p"]}` }
                   >
-                    { grid.propertyValue }{ grid.propertyUnit }
+                    { grid.propertyValue }
                   </p>
                 </div>
               );

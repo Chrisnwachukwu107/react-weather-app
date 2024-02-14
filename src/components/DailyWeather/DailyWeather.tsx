@@ -34,6 +34,7 @@ export default function DailyWeather({
                 <img
                   src={ daily.imgSrc }
                   alt={ `${daily.day} weather` }
+                  width={ 100 }
                 />
                 <p
                 >
