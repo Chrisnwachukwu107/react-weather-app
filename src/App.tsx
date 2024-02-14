@@ -109,23 +109,23 @@ function App() {
   = [
     {
       propertyName: "HIGH",
-      propertyValue: `${weatherDataObj.daily.temperature_2m_max[0].toFixed(1)}${weatherDataObj.daily_units.temperature_2m_max}`,
+      propertyValue: `${weatherDataObj.daily.temperature_2m_max[0]}${weatherDataObj.daily_units.temperature_2m_max}`,
     },
     {
       propertyName: "REL HUMIDITY",
-      propertyValue: `${weatherDataObj.hourly.relative_humidity_2m[0].toFixed(1)}${weatherDataObj.hourly_units.relative_humidity_2m}`,
+      propertyValue: `${weatherDataObj.hourly.relative_humidity_2m[0]}${weatherDataObj.hourly_units.relative_humidity_2m}`,
     },
     {
       propertyName: "WIND",
-      propertyValue: `${weatherDataObj.hourly.wind_speed_10m[0].toFixed(1)}${weatherDataObj.hourly_units.wind_speed_10m}`,
+      propertyValue: `${weatherDataObj.hourly.wind_speed_10m[0]}${weatherDataObj.hourly_units.wind_speed_10m}`,
     },
     {
       propertyName: "LOW",
-      propertyValue: `${weatherDataObj.daily.temperature_2m_min[0].toFixed(1)}${weatherDataObj.daily_units.temperature_2m_min}`,
+      propertyValue: `${weatherDataObj.daily.temperature_2m_min[0]}${weatherDataObj.daily_units.temperature_2m_min}`,
     },
     {
       propertyName: "PRECIP",
-      propertyValue: `${weatherDataObj.hourly.precipitation[0].toFixed(1)}${weatherDataObj.hourly_units.precipitation}`,
+      propertyValue: `${weatherDataObj.hourly.precipitation[0]}${weatherDataObj.hourly_units.precipitation}`,
     },
   ];
 
